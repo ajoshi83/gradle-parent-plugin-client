@@ -1,0 +1,31 @@
+buildscript {
+	repositories {
+		mavenLocal()
+	}
+	dependencies {
+		classpath 'com.poc:custom-gradle-plugin-using-java:1.0-SNAPSHOT'
+	}
+}
+
+
+plugins {
+	//id 'org.springframework.boot' version '2.1.6.RELEASE'
+	id 'java'
+}
+
+//apply plugin: 'io.spring.dependency-management'
+apply plugin: 'com.poc.customGradlePlugin1UsingJava'
+
+group = 'com.poc'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
